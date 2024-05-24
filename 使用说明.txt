@@ -1,0 +1,39 @@
+Python 腳本，用於在指定目錄及其子目錄中遞歸地向圖像添加浮水印或標誌。
+
+要求
+
+pip install tqdm pillow
+
+用法
+此腳本允許您向指定資料夾及其子目錄中的圖像添加浮水印或徽標。該腳本需要幾個參數：
+
+包含要新增浮水印的圖像的資料夾
+要新增的標誌的路徑
+您想要放置徽標的位置（可選）
+水印圖片保存目錄（可選，如果不提供，水印圖片會覆蓋原始圖片）
+水印標誌周圍的填充（以像素為單位）（可選；預設值為 0）
+這些是有效的位置：
+
+topleft 左上角
+topright 右上角
+bottomleft 左下角
+bottomright 右下角
+center（如果沒有指定位置，這將是預設位置）
+
+任何其他位置都會導致錯誤。
+
+若要使用 watermark.py，請指定位置、目標目錄，並將浮水印縮放至影像寬度的 30%，水印透明度0.5：
+
+python watermark.py ./images logo.png --pos bottomright --new_dir ./watermarked_images --scale 30 --opacity 0.5
+若要使用 watermark.py，請指定位置和目標目錄：
+
+python watermark.py ./images logo.png --pos bottomright --new_dir ./watermarked_images
+要在水印周圍添加填充：
+
+python watermark.py ./images logo.png --pos topleft --padding 20
+適應
+如果您想要將浮水印的影像儲存到其他目錄而不是儲存現有文件，請使用--new_dir使用範例中所示的選項。該腳本將在指定的新目錄中維護原始資料夾層次結構。
+
+未來改進的想法
+允許透過精確的像素座標進行自訂定位。
+將浮水印調整為半透明或者可以控制调整水印透明度。
