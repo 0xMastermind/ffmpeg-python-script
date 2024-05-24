@@ -114,7 +114,7 @@ if __name__ == "__main__":
     parser.add_argument('--video_codec', type=str, default='hevc_qsv', help='视频编码器 (hevc_qsv, h264_qsv)')
     parser.add_argument('--font_size', type=int, default=30, help='字体大小')
     parser.add_argument('--font_color', type=str, default='white', help='字体颜色')
-    parser.add_argument('--font_file', type=str, default='./fonts/SimSun.ttf', help='字体文件路径')
+    parser.add_argument('--font_file', type=str, default='./fonts/arial.ttf', help='字体文件路径')
     parser.add_argument('--bitrate', type=str, help='视频比特率')
 
     args = parser.parse_args()
